@@ -1,0 +1,17 @@
+FriendlyName,Certs,Sign,Free/Paid,Use Case,Tag,MakeTarget
+ipxe.lkrn,Full,FALSE,Free Community,BIOS for Linux BootLoaders,build Quick,bin/ipxe.lkrn
+undionly.kpxe,Full,FALSE,Free Community,BIOS with internal UNDI driver ONLY,extra,bin/undionly.kpxe
+ipxe.pxe,Full,FALSE,Free Community,BIOS with FULL drivers,extra,bin/ipxe.pxe
+tests.linux,Full,FALSE,Free Community,Linux Test build,extra,bin-x86_64-linux/tests.linux
+ipxe_x86.efi,Full,FALSE,Free Community,UEFI with FULL drivers,extra,bin-i386-efi/ipxe.efi
+snp_x86.efi,Full,FALSE,Free Community,UEFI with SNP driver,extra,bin-i386-efi-sb/snp.efi
+snp_x_x86.efi,Full,FALSE,Free Community,"UEFI with SNP, USB & other drivers",extra,bin-i386-efi-sb/snp--ecm--acm--ncm--axge--bnxt--tg3--intel--intelxl--ice--vmxnet3--netfront.efi
+ipxe_x64.efi,Full,FALSE,Free Community,UEFI with FULL drivers,extra,bin-x86_64-efi/ipxe.efi
+snp_CA_x64.efi,CA,TRUE,Free Community,UEFI with SNP driver,build HP,bin-x86_64-efi-sb/snp.efi
+snp_DRV_CA_x64.efi,CA,TRUE,Free Community,"UEFI with SNP, USB & other drivers",build HP ISO,bin-x86_64-efi-sb/snp--ecm--acm--ncm--axge--bnxt--tg3--intel--intelxl--ice--vmxnet3--netfront.efi
+snp_x64.efi,Full,TRUE,Paid Customer,UEFI with SNP driver,build HP BC,bin-x86_64-efi-sb/snp.efi
+snp_DRV_x64.efi,Full,TRUE,Paid Customer,"UEFI with SNP, USB & other drivers",build Quick HP ISO BC,bin-x86_64-efi-sb/snp--ecm--acm--ncm--axge--bnxt--tg3--intel--intelxl--ice--vmxnet3--netfront.efi
+snp_CA_aa64.efi,CA,TRUE,Free Community,UEFI with SNP driver,build,bin-arm64-efi-sb/snp.efi
+snp_DRV_CA_aa64.efi,CA,TRUE,Free Community,"UEFI with SNP, USB & other drivers",build ISO,bin-arm64-efi-sb/snp--ecm--acm--ncm--axge--bnxt--tg3--intel--intelxl--ice--vmxnet3--netfront.efi
+snp_aa64.efi,Full,TRUE,Paid Customer,UEFI with SNP driver,build BC,bin-arm64-efi-sb/snp.efi
+snp_DRV_aa64.efi,Full,TRUE,Paid Customer,"UEFI with SNP, USB & other drivers",build Quick ISO BC,bin-arm64-efi-sb/snp--ecm--acm--ncm--axge--bnxt--tg3--intel--intelxl--ice--vmxnet3--netfront.efi

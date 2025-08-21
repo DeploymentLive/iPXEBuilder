@@ -1,0 +1,5 @@
+customers/*/Certs/*
+!customers/*/Certs/ca.crt
+Version.clixml
+Notes/*
+Build/*
