@@ -82,7 +82,7 @@ foreach ( $Build in $Builds ) {
     if ( Compare-FilesIfNewer -dest "$TargetDir/Tmp/$($Build.FriendlyName).ipxe" -Path $ScriptSources ) {
         write-verbose "Invoke-PXEPreCompiler.ps1  $ConfigDir\Assets\embedded.sh"
         "set build_type $($Build.FriendlyName)" | Out-File -FilePath "$TargetDir/Tmp/version.ipxe" -Encoding utf8 -Force 
-        "set script_version $NewVersion" | Out-File -FilePath "$TargetDir/Tmp/version.ipxe" -Encoding utf8 -Append
+        ("set script_version {0}.{1:D4}.{2:D4}.{3:D3}" -f $newversion.major,$newVersion.Minor,$newversion.Build,$NewVersion.Revision )  | Out-File -FilePath "$TargetDir/Tmp/version.ipxe" -Encoding utf8 -Append
         & $iPXEPreCompiler -path $ConfigDir\Assets\embedded.sh -include ( "$TargetDir/Tmp" ) | out-file -Encoding ascii "$TargetDir\Tmp\$($Build.FriendlyName).ipxe"
 
         # & "c:\Program Files\7-Zip\7z.exe" a -tgzip -mx9 "$TargetDir\Tmp\$($Build.FriendlyName).ipxe.gz" "$TargetDir\Tmp\$($Build.FriendlyName).ipxe"

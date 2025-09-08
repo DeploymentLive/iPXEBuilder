@@ -126,19 +126,24 @@ while ( NOT iseq ${BootAttempts} ${MaxFullRetries} )
 
         #endregion
         
-    else # NOT ${force_filename}     # AutoBoot
+    else # NOT ${force_filename}   # AutoBoot
 
+        # #################
         # Call autoboot to initalize network and boot from iPXE Server.
         call BreakPoint AutoBoot
         echo ||
-        if ( isset ${SNPBest} )
-            autoboot ${SNPBest} && exit ||   # Should never return 
-            call ErrorHandler ${errno:hexraw} "autoboot ${SNPBest}"
-            clear SNPBest || 
-        else
-            autoboot && exit || # Should never return 
-            call ErrorHandler ${errno:hexraw} "autoboot ALL"
-        end if
+        set AutoRetries:int32 0
+        while ( NOT iseq ${AutoRetries} 10 ) 
+            if ( isset ${SNPBest} )
+                autoboot ${SNPBest} ||
+                clear SNPBest ||
+            else
+                autoboot ||
+            end if
+            inc AutoRetries ||
+        end while
+        call ErrorHandler ${errno:hexraw} "autoboot ${SNPBest}"
+        # ################
 
     end if
 
